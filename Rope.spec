@@ -1,68 +1,39 @@
-# 导入模块
-import os
-import sys
-from PyInstaller.utils.hooks import collect_data_files
-import subprocess
+# -*- mode: python ; coding: utf-8 -*-
 
-# 获取提交哈希值
-commit_hash = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).decode('utf-8').strip()  
-
-# 构造带提交哈希值的版本号
-version = "1.3.35.dev." + commit_hash
 
 block_cipher = None
 
-a = Analysis([
-        'launch.py',
-        ],
-    pathex=[
-        './scripts',
-        ],
+
+    a = Analysis([
+    'Rope.py',
+    ],
+    pathex=[],
     binaries=[],
     datas=[
-        ('config', './config'),
-        ('data', './data'),
-        ('doc', './doc'),
-        ('fonts', './fonts'),
-        ('icons', './icons'),
-        ('modules', './modules'),
-        ('scripts', './scripts'),
-        ('translate', './translate'),
-        ('ui', './ui'),
-        ('utils', './utils'),
-        ('venv/lib/python3.11/site-packages/spacy_pkuseg', './spacy_pkuseg'),
-        ('venv/lib/python3.11/site-packages/torchvision', './torchvision'),
-        ],
+    (‘benchmark’, ‘./benchmark'),
+    ('models', './models'),
+    ('Rope', './rope'),
+    ('Venv', './env'),
+    ],
     hiddenimports=[
-        'PyQt6',
-        'numpy',
-        'urllib3',
-        'jaconv',
-        'torch',
-        'torchvision',
-        'transformers',
-        'fugashi',
-        'unidic_lite',
-        'tqdm',
-        'shapely',
-        'pyclipper',
-        'einops',
-        'termcolor',
-        'bs4',
-        'deepl',
-        'qtpy',
-        'sentencepiece',
-        'ctranslate2',
-        'docx2txt',
-        'piexif',
-        'keyboard',
-        'requests',
-        'colorama',
-        'openai',
-        'httpx',
-        'langdetect',
-        'srsly',
-        ],
+    'numpy'
+    'opencv-python'
+    'scikit-image'
+    'tk'
+    'pillow==9.5.0'
+    'onnx'
+    'onnxruntime'
+    'protobuf'
+    'torch'
+    'torchvision'
+    'torchaudio'
+    'urllib3'
+    'tqdm'
+    'ftfy'
+    'regex'
+    'opencv-contrib-python'
+    'ffmpeg'
+    ],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -79,7 +50,7 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name='launch',
+    name='Rope',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -99,23 +70,23 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name='launch',
+    name='Rope',
 )
 app = BUNDLE(
     coll,
-    name='BallonsTranslator.app',
+    name='Rope.app',
     icon='icons/icon.icns',
     bundle_identifier=None,
     info_plist={
-        'CFBundleDisplayName': 'BallonsTranslator',
-        'CFBundleName': 'BallonsTranslator',
+        'CFBundleDisplayName': 'Rope',
+        'CFBundleName': 'Rope',
         'CFBundlePackageType': 'APPL',
         'CFBundleSignature': 'BATR',
         'CFBundleShortVersionString': version,
         'CFBundleVersion': version,
-        'CFBundleExecutable': 'launch',
+        'CFBundleExecutable': 'Rope',
         'CFBundleIconFile': 'icon.icns',
-        'CFBundleIdentifier': 'dev.dmmaze.batr',
+        'CFBundleIdentifier': 'dev.Hillobar.batr',
         'CFBundleInfoDictionaryVersion': '6.0',
         'LSApplicationCategoryType': 'public.app-category.graphics-design',
         'LSEnvironment': {'LANG': 'zh_CN.UTF-8'},
