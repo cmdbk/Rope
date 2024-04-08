@@ -13,4 +13,4 @@ tk
 urllib3
 opencv-contrib-python
 ffmpeg
-
+pyinstaller
