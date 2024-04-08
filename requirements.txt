@@ -1,16 +1,22 @@
 --extra-index-url https://download.pytorch.org/whl/cu118
 
-numpy==1.23.5
-opencv-python==4.7.0.72
+numpy
+opencv-python
 scikit-image==0.21.0
 tk==0.1.0
 pillow==9.5.0
-onnx==1.14.0
+onnx
 onnxruntime
-protobuf==4.23.2
+protobuf
 torch
 torchvision
 torchaudio
 tqdm
 ftfy
 regex
+scikit-image
+tk
+urllib3
+opencv-contrib-python
+ffmpeg
+pyinstaller
