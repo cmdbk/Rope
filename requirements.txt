@@ -2,12 +2,13 @@
 
 numpy
 opencv-python
-scikit-image==0.21.0
+scikit-image
 tk==0.1.0
 pillow==9.5.0
 onnx
 onnxruntime
 protobuf
+pytorch
 torch
 torchvision
 torchaudio
