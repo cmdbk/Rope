@@ -13,4 +13,7 @@ tk
 urllib3
 opencv-contrib-python
 ffmpeg
+torch
+torchvision
+torchaudio
 pyinstaller
