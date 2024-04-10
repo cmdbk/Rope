@@ -9,7 +9,7 @@ tqdm
 ftfy
 regex
 scikit-image
-tk
+tk==0.1.0
 urllib3
 opencv-contrib-python
 ffmpeg
