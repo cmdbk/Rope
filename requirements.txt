@@ -16,4 +16,3 @@ ffmpeg
 torch
 torchvision
 torchaudio
-pyinstaller
