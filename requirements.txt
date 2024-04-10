@@ -12,7 +12,6 @@ scikit-image
 tk==0.1.0
 urllib3
 opencv-contrib-python
-ffmpeg
 torch
 torchvision
 torchaudio
