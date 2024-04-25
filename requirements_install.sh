@@ -15,9 +15,3 @@ source 'venv/bin/activate'
 # Install dependencies
 pip3 install -r requirements.txt
 pip3 install pyinstaller
-
-# Delete all .DS_Store
-sudo find ./ -name '.DS_Store' -delete
-
-# Build macOS app via pyinstaller
-sudo pyinstaller launch.spec
